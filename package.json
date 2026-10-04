@@ -1,0 +1,14 @@
+{
+  "name": "dark-souls-3-lore",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "HYPERFRAMES_BROWSER_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" hyperframes check",
+    "render": "HYPERFRAMES_BROWSER_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" hyperframes render -o dark_souls_3_lore.mp4 --workers 1",
+    "preview": "hyperframes preview --background"
+  },
+  "dependencies": {
+    "hyperframes": "0.8.114",
+    "gsap": "3.14.2"
+  }
+}

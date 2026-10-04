@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: LabChinese;
+      src: url('assets/PingFang.ttc');
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #070a0e;
+      color: #f1f5f9;
+      font-family: LabChinese, -apple-system, sans-serif;
+      overflow: hidden;
+    }
+    .bg-wrap {
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/scene06_ending.jpg') center/cover no-repeat;
+      opacity: 0.32;
+      filter: brightness(0.7) contrast(1.2) saturate(1.1);
+    }
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 35%, rgba(6,8,13,0.3) 0%, rgba(5,6,9,0.92) 80%);
+    }
+    .ambient-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Global Timeline Rail */
+    .timeline-rail {
+      position: absolute;
+      left: 70px;
+      right: 70px;
+      top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 15;
+    }
+    .timeline-steps {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .timeline-node {
+      padding: 5px 12px;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .timeline-node.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      border-color: #e2e8f0;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    .timeline-arrow {
+      color: #475569;
+      font-size: 13px;
+    }
+    .game-brand {
+      font-size: 16px;
+      color: #94a3b8;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    /* Hero Title Area */
+    .title-area {
+      position: absolute;
+      left: 70px;
+      right: 70px;
+      top: 86px;
+      z-index: 10;
+    }
+    .eyebrow-tag {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .main-title {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.18;
+      margin: 0;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
+    }
+
+    /* Split Content */
+    .content-split {
+      position: absolute;
+      left: 70px;
+      right: 70px;
+      top: 195px;
+      bottom: 110px;
+      display: flex;
+      gap: 32px;
+      z-index: 10;
+    }
+
+    /* Left Column */
+    .logic-column {
+      flex: 1.15;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .logic-box {
+      background: rgba(15, 20, 28, 0.9);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 18px 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .box-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .box-pill {
+      font-size: 13px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+    .box-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #f8fafc;
+      letter-spacing: 1px;
+    }
+    .box-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .bullet-item {
+      font-size: 17px;
+      line-height: 1.45;
+      color: #cbd5e1;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .bullet-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 9px;
+      flex-shrink: 0;
+    }
+
+    /* Right Column: Character / Scene Card */
+    .art-column {
+      flex: 0.85;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(226, 232, 240, 0.35);
+      background: #0d111a;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+    }
+    .art-img-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .art-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .art-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,8,13,0.1) 40%, rgba(6,8,13,0.95) 100%);
+    }
+    .art-info-overlay {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 5;
+    }
+    .art-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid #e2e8f0;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .art-name {
+      font-size: 30px;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      letter-spacing: 1.5px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    }
+    .art-desc {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Bottom Floating Subtitle (No Progress Bar!) */
+    .caption-container {
+      position: absolute;
+      left: 70px;
+      right: 70px;
+      bottom: 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 25;
+    }
+    .caption-box {
+      position: absolute;
+      background: rgba(8, 11, 18, 0.94);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(226, 232, 240, 0.35);
+      padding: 12px 40px;
+      border-radius: 36px;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.85);
+      text-align: center;
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="scene-06" data-start="0" data-duration="40.76" data-width="1920" data-height="1080">
+    <div class="bg-wrap">
+      <div class="bg-overlay"></div>
+      <div class="ambient-glow"></div>
+    </div>
+
+    <!-- Timeline Rail -->
+    <div class="timeline-rail">
+      <div class="timeline-steps">
+        <div class="timeline-node">01 天灾前因</div><span class="timeline-arrow">➔</span><div class="timeline-node">02 千里寻女</div><span class="timeline-arrow">➔</span><div class="timeline-node">03 迷雾重逢</div><span class="timeline-arrow">➔</span><div class="timeline-node">04 古堡死战</div><span class="timeline-arrow">➔</span><div class="timeline-node">05 史凯利格</div><span class="timeline-arrow">➔</span><div class="timeline-node active">06 终局抉择</div>
+      </div>
+      <div class="game-brand">THE WITCHER 3 / 斯拉夫魔幻巅峰巨作</div>
+    </div>
+
+    <!-- Hero Title -->
+    <div class="title-area">
+      <div class="eyebrow-tag">TIMELINE 06 / CIRI'S WITCHER DESTINY</div>
+      <h1 class="main-title">终局抉择 · 击碎白霜与猎魔人女孩的新生</h1>
+    </div>
+
+    <!-- Split Content -->
+    <div class="content-split">
+      <div class="logic-column">
+        
+              <div class="logic-box" id="lbox-1">
+                <div class="box-header">
+                  <span class="box-pill" style="background: rgba(249, 115, 22, 0.18); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.4);">【舍身救世】</span>
+                  <span class="box-title">毅然迈向白霜永冻核心</span>
+                </div>
+                <div class="box-bullets">
+                  
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #f97316;"></span>
+                    <span>唯有长者之血才能彻底平息肆虐多元宇宙的灭世天灾</span>
+                  </div>
+                
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #f97316;"></span>
+                    <span>希里选择担当救世责任，独自走入毁灭风暴之中</span>
+                  </div>
+                
+                </div>
+              </div>
+            
+              <div class="logic-box" id="lbox-2">
+                <div class="box-header">
+                  <span class="box-pill" style="background: rgba(226, 232, 240, 0.18); color: #e2e8f0; border: 1px solid rgba(226, 232, 240, 0.4);">【父爱支撑】</span>
+                  <span class="box-title">记忆中的温暖点亮生命奇迹</span>
+                </div>
+                <div class="box-bullets">
+                  
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #e2e8f0;"></span>
+                    <span>打雪仗的欢笑、洗劫实验室的恶作剧、毫无保留的信任</span>
+                  </div>
+                
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #e2e8f0;"></span>
+                    <span>正是杰洛特真挚的父爱，给予希里从绝境中生还的强大意志</span>
+                  </div>
+                
+                </div>
+              </div>
+            
+              <div class="logic-box" id="lbox-3">
+                <div class="box-header">
+                  <span class="box-pill" style="background: rgba(21, 128, 61, 0.18); color: #15803d; border: 1px solid rgba(21, 128, 61, 0.4);">【银剑新生】</span>
+                  <span class="box-title">自由翱翔的燕子</span>
+                </div>
+                <div class="box-bullets">
+                  
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #15803d;"></span>
+                    <span>拒绝帝国皇位囚笼，选择当一名风餐露宿的猎魔人</span>
+                  </div>
+                
+                  <div class="bullet-item">
+                    <span class="bullet-dot" style="background: #15803d;"></span>
+                    <span>父女策马奔向广袤无垠的天下，书写属于他们自己的自由传奇！</span>
+                  </div>
+                
+                </div>
+              </div>
+            
+      </div>
+
+      <div class="art-column">
+        <div class="art-img-wrap">
+          <img src="assets/images/scene06_ending.jpg" class="art-img" data-layout-allow-overflow data-duration="40.76" alt="猎魔人 希里" />
+          <div class="art-gradient-overlay"></div>
+          <div class="art-info-overlay">
+            <span class="art-badge">自由新生</span>
+            <h2 class="art-name">猎魔人 希里</h2>
+            <p class="art-desc">斩断天灾枷锁，佩上银剑与杰洛特共同驰骋大地的传奇女猎魔人。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtitle Container -->
+    <div class="caption-container">
+      <div class="caption-box" id="caption-0" style="opacity: 0;">艾瑞汀临死前的遗言揭开了最后危机：白霜天灾正从精灵高塔疯狂倾泻</div><div class="caption-box" id="caption-1" style="opacity: 0;">整个世界马上就要被彻底冻死</div><div class="caption-box" id="caption-2" style="opacity: 0;">希里毫不犹豫走向通往极寒风暴的时空核心</div><div class="caption-box" id="caption-3" style="opacity: 0;">杰洛特拼死阻拦</div><div class="caption-box" id="caption-4" style="opacity: 0;">但希里坚定地说：“这是我的宿命</div><div class="caption-box" id="caption-5" style="opacity: 0;">但我会回来的</div><div class="caption-box" id="caption-6" style="opacity: 0;">”在白霜的风暴中心</div><div class="caption-box" id="caption-7" style="opacity: 0;">正是杰洛特在旅途中每一次对她的尊重、打雪仗的欢笑与无私的父爱</div><div class="caption-box" id="caption-8" style="opacity: 0;">化成了她击碎白霜的无尽勇气</div><div class="caption-box" id="caption-9" style="opacity: 0;">杰洛特在白果园将一把崭新的银剑交到希里手中</div><div class="caption-box" id="caption-10" style="opacity: 0;">她终于成为了自由自在的猎魔人</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines['scene-06'] = tl;
+
+    // Entrance
+    tl.from('.title-area', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' }, 0.1);
+    tl.from('.logic-box', { x: -40, opacity: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out' }, 0.3);
+    tl.from('.art-column', { scale: 0.95, opacity: 0, duration: 0.9, ease: 'back.out(1.2)' }, 0.4);
+
+    // Subtitles sequence
+    const clauseDur = 3.52;
+    
+    tl.to('#caption-0', { opacity: 1, y: 0, duration: 0.3 }, 0.50);
+    tl.to('#caption-0', { opacity: 0, y: -10, duration: 0.25 }, 3.92);
+    
+
+    tl.to('#caption-1', { opacity: 1, y: 0, duration: 0.3 }, 4.02);
+    tl.to('#caption-1', { opacity: 0, y: -10, duration: 0.25 }, 7.45);
+    
+
+    tl.to('#caption-2', { opacity: 1, y: 0, duration: 0.3 }, 7.55);
+    tl.to('#caption-2', { opacity: 0, y: -10, duration: 0.25 }, 10.97);
+    
+
+    tl.to('#caption-3', { opacity: 1, y: 0, duration: 0.3 }, 11.07);
+    tl.to('#caption-3', { opacity: 0, y: -10, duration: 0.25 }, 14.49);
+    
+
+    tl.to('#caption-4', { opacity: 1, y: 0, duration: 0.3 }, 14.59);
+    tl.to('#caption-4', { opacity: 0, y: -10, duration: 0.25 }, 18.02);
+    
+
+    tl.to('#caption-5', { opacity: 1, y: 0, duration: 0.3 }, 18.12);
+    tl.to('#caption-5', { opacity: 0, y: -10, duration: 0.25 }, 21.54);
+    
+
+    tl.to('#caption-6', { opacity: 1, y: 0, duration: 0.3 }, 21.64);
+    tl.to('#caption-6', { opacity: 0, y: -10, duration: 0.25 }, 25.07);
+    
+
+    tl.to('#caption-7', { opacity: 1, y: 0, duration: 0.3 }, 25.17);
+    tl.to('#caption-7', { opacity: 0, y: -10, duration: 0.25 }, 28.59);
+    
+
+    tl.to('#caption-8', { opacity: 1, y: 0, duration: 0.3 }, 28.69);
+    tl.to('#caption-8', { opacity: 0, y: -10, duration: 0.25 }, 32.11);
+    
+
+    tl.to('#caption-9', { opacity: 1, y: 0, duration: 0.3 }, 32.21);
+    tl.to('#caption-9', { opacity: 0, y: -10, duration: 0.25 }, 35.64);
+    
+
+    tl.to('#caption-10', { opacity: 1, y: 0, duration: 0.3 }, 35.74);
+    tl.to('#caption-10', { opacity: 0, y: -10, duration: 0.25 }, 39.16);
+    
+
+    // Keep active until end
+    tl.to({}, { duration: 40.76 }, 0);
+  </script>
+</body>
+</html>
