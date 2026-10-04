@@ -1,76 +1,47 @@
-# 巫师三：狂猎阴影下的千里寻女与长者之血破晓
+# 巫师三 · 寻女之旅与长者之血
 
-> 6幕斯拉夫魔幻史诗复盘：从白霜极寒天灾与长者之血追猎、威伦沼泽寻踪，到迷雾之岛父女相拥、凯尔莫罕血战，再到怒斩狂猎王艾瑞汀与希里女猎魔人新生！
+用六幕中文视频回顾杰洛特寻找希里、凯尔莫罕之战与狂猎终局。
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Showcase-brightgreen?style=for-the-badge&logo=github)](https://holynova.github.io/witcher-3-lore/)
-[![Hyperframes](https://img.shields.io/badge/Rendered%20with-Hyperframes%203.0-orange?style=for-the-badge)](https://hyperframes.heygen.com)
-[![Voice](https://img.shields.io/badge/Voice-YunjianNeural-blue?style=for-the-badge)](https://azure.microsoft.com/en-us/products/cognitive-services/text-to-speech/)
+A six-chapter Chinese video following Geralt’s search for Ciri and the Wild Hunt finale.
 
----
+[在线体验](https://witcher-3-lore.xiaosang.cc/) · [源码](https://github.com/holynova/witcher-3-lore)
 
-## 🌐 在线体验与直达链接
-👉 **点击直接访问 GitHub Pages 视频与互动播放器**:  
-**[https://holynova.github.io/witcher-3-lore/](https://holynova.github.io/witcher-3-lore/)**
+![巫师三 · 寻女之旅与长者之血：真实页面截图](./assets/readme/screenshot.png)
 
----
+## 可以做什么
 
-## 🎨 视觉风格与工程规格
-- **专属配色主题**: `猎魔人银剑白 (#e2e8f0) + 伊格尼烈火橙 (#f97316) + 斯拉夫沼泽绿 (#15803d)`
-- **视频规格**: 1920x1080 30FPS，基于 Hyperframes 3.0 ANGLE Metal 硬件加速录制
-- **配音音调**: `edge-tts --voice zh-CN-YunjianNeural --rate=+3%`（慷慨激昂纪录片大片气势）
-- **氛围原画**: 纯正 4K/1080P 官方与 Nano 级高精概念美术
-- **交互特色**: 
-  - 严密 6 幕因果时间线（起因 ➔ 转折 ➔ 危机 ➔ 保底/抉择 ➔ 决战 ➔ 破晓/终局）
-  - 醒目大字、因果分类框（`【起因】`、`【冲突】`、`【后果】`）、简练 Bullets 要点
-  - **画面底部绝对无进度条**，极简高级视觉流
+- 视频播放器与剧情章节说明放在同一页面。
+- 旁白、图像和时间线源码支持后续修改。
 
----
+## 观看与工程
 
-## 📜 六幕剧情前因后果全景
+打开在线页面播放，或选择章节定位观看。包含主线与结局剧透。
 
-### Stage 01: 天灾前因 · 狂猎阴影与长者之血
-- **时间线节点**: `TIMELINE 01 / THE FROST & ELDER BLOOD`
-- **出场焦点**: **利维亚的杰洛特** (白狼猎魔人)
-- **核心叙事**: 巫师三的世界观磅礴厚重，但驱动整部史诗前行的核心因果极其纯粹：那就是一位父亲拼尽一切寻找养女！大前因要追溯到古老的灭世预言：能冻结一切维度的极寒天灾“白霜”正在席卷多元宇宙，狂猎精灵军团的家园即将毁灭！为了逃难，狂猎之王艾瑞汀疯狂追捕流淌着时空穿越神力的“长者之血”最后继承人——希里！而作为希里唯一的养父，猎魔人杰洛特必须抢在狂猎之前找到她！
+[打开成片](https://witcher-3-lore.xiaosang.cc/witcher_3_lore.mp4) · [仓库中的视频](./witcher_3_lore.mp4)
 
-### Stage 02: 千里寻女 · 战火大陆与旧爱重聚
-- **时间线节点**: `TIMELINE 02 / TRAIL OF CIRI & YENNEFER`
-- **出场焦点**: **温格堡的叶奈法** (黑白女术士)
-- **核心叙事**: 寻找希里的旅程充满人间的战火与残酷！南方帝国尼弗迦德大举北伐，战火席卷整片大陆！杰洛特与旧爱叶奈法在白果园重聚，从皇帝恩希尔手中接下寻女委托后分头行动！杰洛特只身踏入满目疮痍的威伦无人之地，与吃人肉的老巫会斗智斗勇，见证了血腥男爵一家的悲剧离合；又潜入灯红酒绿的自由之城诺维格瑞，在神殿卫队的火刑架下追寻特莉丝与丹德里恩！千难万险，只为了希里的一丝蛛丝马迹！
+实测成片：1920 × 1080，30 fps，H.264 + AAC；时长 3:58，文件约 13.0 MiB。
 
-### Stage 03: 迷雾重逢 · 父女相拥与警报拉响
-- **时间线节点**: `TIMELINE 03 / THE ISLE OF MISTS`
-- **出场焦点**: **希里雅 (希里)** (辛特拉幼狮)
-- **核心叙事**: 整个游戏最催人泪下的瞬间，在迷雾之岛轰然降临！杰洛特历经千辛万苦乘船穿越迷雾，推开木屋大门，却看到希里早已冰冷地躺在床上，毫无生机！那一刻，斩杀过无数怪物的冷血白狼心碎跪地，紧紧将女儿抱在怀里，悲痛欲绝！然而奇迹发生了——魔法萤火虫唤醒了希里，女孩缓缓睁开双眼，父女紧紧相拥！但片刻温存后警报骤响：狂猎大军已追踪魔力气息降临，唯有猎魔人的老巢凯尔莫罕才能作为决战要塞！
+`index.html` 是公开播放器；`composition.html` 与 `compositions/` 保留视频合成源码。旁白和配乐在 `assets/`。
 
-### Stage 04: 古堡死战 · 维瑟米尔之死与血脉暴走
-- **时间线节点**: `TIMELINE 04 / BATTLE OF KAER MORHEN`
-- **出场焦点**: **维瑟米尔老爷子** (老猎魔人宗师)
-- **核心叙事**: 凯尔莫罕保卫战是一场惨烈至极的攻防绝战！叶奈法升起巨大的魔法穹顶，特莉丝降下漫天火雨，杰洛特、兰伯特、艾斯卡尔与各路好友在城墙下浴血奋战！然而狂猎的冰霜风暴瞬间冰封全场！狂猎将领伊勒瑞斯抓住了希里，德高望重的老猎魔人导师维瑟米尔为了保护希里，被伊勒瑞斯残忍折断了脖子！目睹如祖父般的长者牺牲，悲痛欲绝的希里长者之血彻底暴走，狂暴的毁灭尖叫几乎震碎了整座城堡，狂猎被迫狼狈撤退！
+## 本地预览
 
-### Stage 05: 史凯利格 · 太阳石诱敌与怒斩狂猎王
-- **时间线节点**: `TIMELINE 05 / FINAL BATTLE IN SKELLIGE`
-- **出场焦点**: **狂猎之王 艾瑞汀** (精灵暴君)
-- **核心叙事**: 防守永远赢不了战争，白狼展开了雷霆万钧的反击！在阿瓦拉克的指引下，杰洛特在史凯利格群岛找到了上古神器“太阳石”，召唤狂猎的幽灵舰队进入现实陷阱！女术士集结布下结界，彻底锁死了狂猎的时空退路！杰洛特手持抹满剑油的银剑，单枪匹马登上狂猎旗舰纳吉尔法号！在狂风呼啸的甲板上，杰洛特以神乎其神的猎魔人剑术，亲手斩杀狂猎之王艾瑞汀，彻底粉碎了狂猎军团的入侵神话！
-
-### Stage 06: 终局抉择 · 击碎白霜与猎魔人女孩的新生
-- **时间线节点**: `TIMELINE 06 / CIRI'S WITCHER DESTINY`
-- **出场焦点**: **猎魔人 希里** (自由新生)
-- **核心叙事**: 艾瑞汀临死前的遗言揭开了最后危机：白霜天灾正从精灵高塔疯狂倾泻，整个世界马上就要被彻底冻死！希里毫不犹豫走向通往极寒风暴的时空核心！杰洛特拼死阻拦，但希里坚定地说：“这是我的宿命，但我会回来的！”在白霜的风暴中心，正是杰洛特在旅途中每一次对她的尊重、打雪仗的欢笑与无私的父爱，化成了她击碎白霜的无尽勇气！数月后，杰洛特在白果园将一把崭新的银剑交到希里手中，她终于成为了自由自在的猎魔人！
-
-
-
----
-
-## 🚀 本地运行与开发
 ```bash
-# 本地预览播放器
 python3 -m http.server 8080
-# 浏览器打开 http://localhost:8080
-
-# 重新渲染视频
-npx hyperframes render -o witcher-3_lore.mp4 --workers 1
 ```
 
----
-*Created with Hyperframes Video Engine & Antigravity Agentic Studio.*
+打开 http://localhost:8080/。播放器直接使用仓库成片，无需先渲染。
+
+重新渲染需安装工程依赖和可用的 Chrome；在 HyperFrames 中使用 `composition.html` 合成入口，避免把播放器页面当作视频时间线。
+
+影视化剧情是作者的剪辑与解释，游戏角色、官方素材及相关商标归各自权利人；这是非官方项目。
+
+<img src="./assets/readme/qr.png" width="144" alt="扫码打开https://witcher-3-lore.xiaosang.cc/">
+
+## 发布
+
+```bash
+npx --yes wrangler@4.128.0 deploy --dry-run --config wrangler.jsonc
+npx --yes wrangler@4.128.0 deploy --config wrangler.jsonc
+```
+
+从 `main` 同一提交在本地手动发布到Cloudflare Workers。正式地址：[https://witcher-3-lore.xiaosang.cc/](https://witcher-3-lore.xiaosang.cc/)。 `.assetsignore` 限定公开播放器/站点资源，排除合成工程、开发文件与未供页面使用的大体积音频/字体。
