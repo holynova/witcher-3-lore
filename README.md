@@ -45,3 +45,5 @@ npx --yes wrangler@4.128.0 deploy --config wrangler.jsonc
 ```
 
 从 `main` 同一提交在本地手动发布到Cloudflare Workers。正式地址：[https://witcher-3-lore.xiaosang.cc/](https://witcher-3-lore.xiaosang.cc/)。 `.assetsignore` 限定公开播放器/站点资源，排除合成工程、开发文件与未供页面使用的大体积音频/字体。
+
+视频通过 `worker/media.mjs` 提供HTTP字节范围读取，支持章节跳转；运行 `npm run test:media` 检查范围与校验器处理。
