@@ -9,14 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #070a0e;
-      --bg-card: rgba(15, 20, 28, 0.9);
-      --border-color: rgba(226, 232, 240, 0.35);
-      --accent: #e2e8f0;
-      --accent-sec: #f97316;
-      --accent-alert: #15803d;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg: #0b0a08;
+      --bg-card: rgba(26, 22, 18, 0.9);
+      --border-color: rgba(233, 226, 213, 0.35);
+      --accent: #e9e2d5;
+      --text-main: #faf7f0;
+      --text-muted: #a8a29a;
+      --fs-s: 13px;
+      --fs-m: 15px;
+      --fs-l: 22px;
+      --fs-xl: clamp(30px, 4.5vw, 52px);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -28,7 +30,7 @@
       overflow-x: hidden;
     }
     .series-nav-bar {
-      background: rgba(10, 14, 22, 0.95);
+      background: rgba(18, 16, 13, 0.98);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 12px 20px;
       display: flex;
@@ -38,15 +40,14 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(12px);
     }
     .series-link {
-      color: #94a3b8;
+      color: #a8a29a;
       text-decoration: none;
-      font-size: 14px;
+      font-size: var(--fs-s);
       font-weight: 700;
       padding: 5px 14px;
-      border-radius: 20px;
+      border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.2s;
     }
@@ -62,17 +63,17 @@
     .badge-top {
       display: inline-block;
       padding: 5px 18px;
-      border-radius: 30px;
+      border-radius: 999px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid var(--accent);
       color: var(--accent);
-      font-size: 13px;
+      font-size: var(--fs-s);
       letter-spacing: 2.5px;
       margin-bottom: 16px;
       font-weight: 800;
     }
     .main-title {
-      font-size: clamp(30px, 4.5vw, 52px);
+      font-size: var(--fs-xl);
       font-weight: 900;
       letter-spacing: 1.5px;
       line-height: 1.25;
@@ -82,7 +83,7 @@
       -webkit-text-fill-color: transparent;
     }
     .subtitle {
-      font-size: clamp(15px, 1.8vw, 19px);
+      font-size: var(--fs-m);
       color: var(--text-muted);
       max-width: 840px;
       margin: 0 auto 28px;
@@ -96,11 +97,11 @@
     }
     .spec-tag {
       padding: 5px 14px;
-      border-radius: 8px;
+      border-radius: 6px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 13px;
-      color: #cbd5e1;
+      font-size: var(--fs-s);
+      color: #d6d0c4;
     }
     .spec-tag b { color: var(--accent); }
     .container {
@@ -111,9 +112,8 @@
     .video-box {
       background: #000;
       border: 1.5px solid var(--border-color);
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
       margin-bottom: 30px;
     }
     .video-wrapper {
@@ -139,8 +139,8 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #f1f5f9;
-      font-size: 14px;
+      color: #f5f1e8;
+      font-size: var(--fs-m);
       z-index: 10;
       backdrop-filter: blur(8px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
@@ -159,14 +159,14 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background: rgba(10, 15, 24, 0.85);
+      background: rgba(20, 18, 14, 0.85);
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 13px;
-      color: #94a3b8;
+      font-size: var(--fs-s);
+      color: #a8a29a;
       flex-wrap: wrap;
       gap: 10px;
     }
-    .stream-tip { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .stream-tip { display: flex; align-items: center; gap: 6px; font-size: var(--fs-s); }
     .stream-actions { display: flex; gap: 10px; }
     .aux-btn {
       display: inline-flex;
@@ -174,10 +174,10 @@
       gap: 6px;
       padding: 5px 12px;
       border-radius: 6px;
-      font-size: 12px;
+      font-size: var(--fs-s);
       font-weight: 600;
       text-decoration: none;
-      color: #f1f5f9;
+      color: #f5f1e8;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       transition: all 0.2s;
@@ -192,7 +192,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 14px 20px;
-      background: rgba(15, 20, 30, 0.95);
+      background: rgba(26, 22, 18, 0.95);
       border-top: 1px solid rgba(255,255,255,0.08);
       flex-wrap: wrap;
       gap: 12px;
@@ -201,14 +201,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
+      font-size: var(--fs-m);
     }
     .indicator-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
@@ -222,8 +221,8 @@
       border-radius: 6px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.15);
-      color: #cbd5e1;
-      font-size: 13px;
+      color: #d6d0c4;
+      font-size: var(--fs-s);
       cursor: pointer;
     }
     .speed-btn.active {
@@ -246,6 +245,9 @@
       border-radius: 12px;
       padding: 12px 14px;
       cursor: pointer;
+      font-family: inherit;
+      color: inherit;
+      text-align: left;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -256,24 +258,28 @@
       transform: translateY(-2px);
     }
     .tn-index {
-      font-size: 18px;
+      font-size: var(--fs-l);
       font-weight: 900;
       color: var(--accent);
     }
-    .tn-info { flex: 1; overflow: hidden; }
+    .tn-info { flex: 1; overflow: hidden; min-width: 0; }
     .tn-title {
-      font-size: 13px;
+      display: block;
+      font-size: var(--fs-s);
       font-weight: 700;
-      white-space: nowrap;
+      line-height: 1.45;
+      min-height: 2.9em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       overflow: hidden;
-      text-overflow: ellipsis;
-      color: #f1f5f9;
+      color: #f5f1e8;
     }
-    .tn-time { font-size: 11px; color: #64748b; }
+    .tn-time { display: block; font-size: var(--fs-s); color: #8a8378; }
 
     /* Section Headings */
     .section-title {
-      font-size: 26px;
+      font-size: var(--fs-l);
       font-weight: 900;
       margin: 40px 0 20px;
       display: flex;
@@ -286,8 +292,7 @@
       width: 4px;
       height: 24px;
       background: var(--accent);
-      border-radius: 2px;
-      box-shadow: 0 0 10px var(--accent);
+      border-radius: 999px;
     }
 
     /* Causal Cards List */
@@ -310,40 +315,42 @@
     .csc-header { margin-bottom: 18px; }
     .csc-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; }
     .csc-step {
-      font-size: 12px;
+      font-size: var(--fs-s);
       font-weight: 800;
       padding: 2px 8px;
-      border-radius: 4px;
+      border-radius: 6px;
       background: rgba(255,255,255,0.1);
       color: var(--accent);
     }
-    .csc-time-tag { font-size: 12px; color: #64748b; }
-    .csc-title { font-size: 22px; font-weight: 900; color: #f8fafc; margin-bottom: 8px; }
-    .csc-narration { font-size: 15px; color: var(--text-muted); font-style: italic; line-height: 1.5; }
+    .csc-time-tag { font-size: var(--fs-s); color: #8a8378; }
+    .csc-title { font-size: var(--fs-l); font-weight: 900; color: #faf7f0; margin-bottom: 8px; }
+    .csc-narration { font-size: var(--fs-m); color: var(--text-muted); line-height: 1.5; }
     .csc-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
     }
     .causal-box {
-      background: rgba(8, 12, 18, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      padding: 14px 16px;
+      background: transparent;
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 2px 0;
     }
     .c-pill {
-      font-size: 12px;
+      font-size: var(--fs-s);
       font-weight: 800;
       padding: 2px 8px;
-      border-radius: 4px;
+      border-radius: 6px;
       display: inline-block;
       margin-bottom: 8px;
+      background: rgba(233, 226, 213, 0.16);
+      color: var(--accent);
     }
-    .c-title { font-size: 17px; font-weight: 800; color: #ffffff; margin-bottom: 8px; }
+    .c-title { font-size: var(--fs-m); font-weight: 800; color: #ffffff; margin-bottom: 8px; }
     .c-bullets { list-style: none; padding-left: 0; }
     .c-bullets li {
-      font-size: 14px;
-      color: #cbd5e1;
+      font-size: var(--fs-m);
+      color: #d6d0c4;
       margin-bottom: 5px;
       position: relative;
       padding-left: 14px;
@@ -353,7 +360,7 @@
       position: absolute;
       left: 0;
       color: var(--accent);
-      font-size: 16px;
+      font-size: var(--fs-m);
       line-height: 1;
     }
 
@@ -390,41 +397,74 @@
       bottom: 12px;
       left: 12px;
       background: rgba(0,0,0,0.8);
-      border: 1px solid;
+      border: 1px solid var(--accent);
       padding: 3px 10px;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: var(--fs-s);
+      color: var(--accent);
       font-weight: 700;
     }
     .char-body { padding: 18px 20px; }
-    .char-name { font-size: 20px; font-weight: 900; color: #ffffff; margin-bottom: 6px; }
-    .char-desc { font-size: 14px; color: var(--text-muted); line-height: 1.45; }
+    .char-name { font-size: var(--fs-l); font-weight: 900; color: #ffffff; margin-bottom: 6px; }
+    .char-desc { font-size: var(--fs-m); color: var(--text-muted); line-height: 1.45; }
 
     .footer {
       text-align: center;
       padding: 40px 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #64748b;
-      font-size: 13px;
+      color: #8a8378;
+      font-size: var(--fs-s);
+    }
+
+    .timeline-hint {
+      font-size: var(--fs-s);
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0 0 14px;
+    }
+    .scene-jump {
+      margin-left: auto;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: var(--fs-s);
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .scene-jump:hover {
+      background: var(--accent);
+      color: #000;
+    }
+    @media (max-width: 640px) {
+      .hero-banner { padding: 32px 16px 16px; }
+      .container { padding: 0 16px 60px; }
+      .causal-scene-card { padding: 18px 16px; }
+      .char-img-wrap { height: 200px; }
+      .player-aux-bar { justify-content: center; }
+      .section-title { margin: 32px 0 16px; }
     }
   </style>
 </head>
 <body>
   <!-- Global Series Bar -->
-  <div class="series-nav-bar">
+  <nav class="series-nav-bar" aria-label="系列站切换">
     <a href="https://elden-ring-lore.xiaosang.cc/" class="series-link">艾尔登法环</a><a href="https://cyberpunk-2077-lore.xiaosang.cc/" class="series-link">赛博朋克2077</a><a href="https://rdr2-lore.xiaosang.cc/" class="series-link">荒野大镖客2</a><a href="https://gta5-lore.xiaosang.cc/" class="series-link">GTA5</a><a href="https://witcher-3-lore.xiaosang.cc/" class="series-link active">巫师三</a><a href="https://dark-souls-3-lore.xiaosang.cc/" class="series-link">黑暗之魂3</a>
-  </div>
+  </nav>
 
   <!-- Hero Header -->
   <header class="hero-banner">
-    <div class="badge-top">THE WITCHER 3 / 斯拉夫魔幻巅峰巨作</div>
+    <div class="badge-top">The Witcher 3 / 斯拉夫魔幻巅峰巨作</div>
     <h1 class="main-title">巫师三：狂猎阴影下的千里寻女与长者之血破晓</h1>
     <p class="subtitle">从白霜天灾预言、威伦沼泽寻踪，到凯尔莫罕血战与父爱救赎</p>
     <div class="tag-container">
-      <div class="spec-tag">视频规格：<b>1080P 60FPS 超清</b></div>
-      <div class="spec-tag">音频体验：<b>双声道定制氛围 BGM</b></div>
-      <div class="spec-tag">叙事风格：<b>慷慨激昂 / 说人话因果闭环</b></div>
-      <div class="spec-tag">视觉呈现：<b>极简大字 / 严密时间线 / 绝对无进度条</b></div>
+      <div class="spec-tag">视频规格：<b>1080P 30FPS 超清</b></div>
+      <div class="spec-tag">片长：<b>3 分 58 秒</b></div>
+      <div class="spec-tag">音频体验：<b>双声道氛围配乐</b></div>
+      <div class="spec-tag">叙事风格：<b>慷慨激昂 / 把因果讲明白</b></div>
+      <div class="spec-tag">视觉呈现：<b>大字标题 / 严密时间线</b></div>
     </div>
   </header>
 
@@ -438,13 +478,13 @@
         </video>
         <div id="videoLoadingHint" class="video-loading-hint" style="display:none;">
           <div class="loading-spin"></div>
-          <span id="loadingHintText">视频缓冲中，请稍候...</span>
+          <span id="loadingHintText">视频加载中…</span>
         </div>
       </div>
       <div class="player-quickbar">
         <div class="current-chapter-display">
           <div class="indicator-dot"></div>
-          <span>当前解析：<b class="current-chapter-name" id="curChapterName">天灾前因 · 狂猎阴影与长者之血</b></span>
+          <span>当前解析：<b class="current-chapter-name" id="curChapterName">天灾前因——狂猎阴影与长者之血</b></span>
         </div>
         <div class="playback-tools">
           <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
@@ -454,7 +494,7 @@
       </div>
       <div class="player-aux-bar">
         <div class="stream-tip">
-          <span>⚡ 1080P 超清 Web 串流优化已生效 (FastStart 零等待即开即看)</span>
+          <span>⚡ 即点即看，无需等待缓冲</span>
         </div>
         <div class="stream-actions">
           <a href="witcher_3_lore.mp4" target="_blank" class="aux-btn">
@@ -462,7 +502,7 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
           <a href="witcher_3_lore.mp4" download="witcher_3_lore.mp4" class="aux-btn">
-            <span>下载原片 MP4</span>
+            <span>下载原片（约 13 MB）</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           </a>
         </div>
@@ -470,55 +510,56 @@
     </div>
 
     <!-- Timeline Nav Bar -->
+    <p class="timeline-hint">点下面任意一幕，视频会跳到对应位置</p>
     <div class="timeline-nav-grid">
       
-          <div class="timeline-nav-card" onclick="jumpToChapter(0.0, 1)">
-            <div class="tn-index">01</div>
-            <div class="tn-info">
-              <div class="tn-title">天灾前因 · 狂猎阴影与长者之血</div>
-              <div class="tn-time">00:00</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(0.0, 1)" aria-label="跳到第1幕：天灾前因——狂猎阴影与长者之血">
+            <span class="tn-index">01</span>
+            <span class="tn-info">
+              <span class="tn-title">天灾前因——狂猎阴影与长者之血</span>
+              <span class="tn-time">00:00</span>
+            </span>
+          </button>
         
-          <div class="timeline-nav-card" onclick="jumpToChapter(37.6, 2)">
-            <div class="tn-index">02</div>
-            <div class="tn-info">
-              <div class="tn-title">千里寻女 · 战火大陆与旧爱重聚</div>
-              <div class="tn-time">00:37</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(37.6, 2)" aria-label="跳到第2幕：千里寻女——战火大陆与旧爱重聚">
+            <span class="tn-index">02</span>
+            <span class="tn-info">
+              <span class="tn-title">千里寻女——战火大陆与旧爱重聚</span>
+              <span class="tn-time">00:37</span>
+            </span>
+          </button>
         
-          <div class="timeline-nav-card" onclick="jumpToChapter(77.4, 3)">
-            <div class="tn-index">03</div>
-            <div class="tn-info">
-              <div class="tn-title">迷雾重逢 · 父女相拥与警报拉响</div>
-              <div class="tn-time">01:17</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(77.4, 3)" aria-label="跳到第3幕：迷雾重逢——父女相拥与警报拉响">
+            <span class="tn-index">03</span>
+            <span class="tn-info">
+              <span class="tn-title">迷雾重逢——父女相拥与警报拉响</span>
+              <span class="tn-time">01:17</span>
+            </span>
+          </button>
         
-          <div class="timeline-nav-card" onclick="jumpToChapter(118.4, 4)">
-            <div class="tn-index">04</div>
-            <div class="tn-info">
-              <div class="tn-title">古堡死战 · 维瑟米尔之死与血脉暴走</div>
-              <div class="tn-time">01:58</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(118.4, 4)" aria-label="跳到第4幕：古堡死战——维瑟米尔之死与血脉暴走">
+            <span class="tn-index">04</span>
+            <span class="tn-info">
+              <span class="tn-title">古堡死战——维瑟米尔之死与血脉暴走</span>
+              <span class="tn-time">01:58</span>
+            </span>
+          </button>
         
-          <div class="timeline-nav-card" onclick="jumpToChapter(159.4, 5)">
-            <div class="tn-index">05</div>
-            <div class="tn-info">
-              <div class="tn-title">史凯利格 · 太阳石诱敌与怒斩狂猎王</div>
-              <div class="tn-time">02:39</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(159.4, 5)" aria-label="跳到第5幕：史凯利格——太阳石诱敌与怒斩狂猎王">
+            <span class="tn-index">05</span>
+            <span class="tn-info">
+              <span class="tn-title">史凯利格——太阳石诱敌与怒斩狂猎王</span>
+              <span class="tn-time">02:39</span>
+            </span>
+          </button>
         
-          <div class="timeline-nav-card" onclick="jumpToChapter(197.5, 6)">
-            <div class="tn-index">06</div>
-            <div class="tn-info">
-              <div class="tn-title">终局抉择 · 击碎白霜与猎魔人女孩的新生</div>
-              <div class="tn-time">03:17</div>
-            </div>
-          </div>
+          <button type="button" class="timeline-nav-card" onclick="jumpToChapter(197.5, 6)" aria-label="跳到第6幕：终局抉择——击碎白霜与猎魔人女孩的新生">
+            <span class="tn-index">06</span>
+            <span class="tn-info">
+              <span class="tn-title">终局抉择——击碎白霜与猎魔人女孩的新生</span>
+              <span class="tn-time">03:17</span>
+            </span>
+          </button>
         
     </div>
 
@@ -529,16 +570,17 @@
           <div class="causal-scene-card" id="scene-card-1">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 01</span>
+                <span class="csc-step">第一幕</span>
                 <span class="csc-time-tag">00:00</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(0.0, 1)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">天灾前因 · 狂猎阴影与长者之血</h3>
+              <h3 class="csc-title">天灾前因——狂猎阴影与长者之血</h3>
               <p class="csc-narration">"巫师三的世界观磅礴厚重，但驱动整部史诗前行的核心因果极其纯粹：那就是一位父亲拼尽一切寻找养女！大前因要追溯到古老的灭世预言：能冻结一切维度的极寒天灾“白霜”正在席卷多元宇宙，狂猎精灵军团的家园即将毁灭！为了逃难，狂猎之王艾瑞汀疯狂追捕流淌着时空穿越神力的“长者之血”最后继承人——希里！而作为希里唯一的养父，猎魔人杰洛特必须抢在狂猎之前找到她！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【白霜灭世】</span>
+                <span class="c-pill">【白霜灭世】</span>
                 <h4 class="c-title">多元宇宙的永冻极寒灾难</h4>
                 <ul class="c-bullets">
                   <li>上古天灾席卷无数平行世界，生命被彻底冰封冻结</li><li>狂猎所在的狂猎精灵世界濒临毁灭，急需逃亡出路</li>
@@ -546,7 +588,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【长者之血】</span>
+                <span class="c-pill">【长者之血】</span>
                 <h4 class="c-title">掌控时空穿越维度的神力</h4>
                 <ul class="c-bullets">
                   <li>希里身上流淌着精灵族最纯正的古代血脉长者之血</li><li>她是唯一拥有瞬间跨越时空维度、甚至关停白霜钥匙的存在</li>
@@ -554,7 +596,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【铁蹄追杀】</span>
+                <span class="c-pill">【铁蹄追杀】</span>
                 <h4 class="c-title">狂猎骑士团全维度猎捕</h4>
                 <ul class="c-bullets">
                   <li>死灵骑士军团撕裂天空，冰霜战马踏破现实世界</li><li>杰洛特白狼嗅到了危险气息，踏上横跨整个大陆的寻女征途</li>
@@ -567,16 +609,17 @@
           <div class="causal-scene-card" id="scene-card-2">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 02</span>
+                <span class="csc-step">第二幕</span>
                 <span class="csc-time-tag">00:37</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(37.64, 2)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">千里寻女 · 战火大陆与旧爱重聚</h3>
+              <h3 class="csc-title">千里寻女——战火大陆与旧爱重聚</h3>
               <p class="csc-narration">"寻找希里的旅程充满人间的战火与残酷！南方帝国尼弗迦德大举北伐，战火席卷整片大陆！杰洛特与旧爱叶奈法在白果园重聚，从皇帝恩希尔手中接下寻女委托后分头行动！杰洛特只身踏入满目疮痍的威伦无人之地，与吃人肉的老巫会斗智斗勇，见证了血腥男爵一家的悲剧离合；又潜入灯红酒绿的自由之城诺维格瑞，在神殿卫队的火刑架下追寻特莉丝与丹德里恩！千难万险，只为了希里的一丝蛛丝马迹！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【帝国委托】</span>
+                <span class="c-pill">【帝国委托】</span>
                 <h4 class="c-title">尼弗迦德大帝生父委托</h4>
                 <ul class="c-bullets">
                   <li>恩希尔大帝动用帝国密探寻女，叶奈法主掌魔法侦测</li><li>杰洛特获得最高通行令，以游侠身份地毯式搜索</li>
@@ -584,7 +627,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【人间炼狱】</span>
+                <span class="c-pill">【人间炼狱】</span>
                 <h4 class="c-title">威伦沼泽与血腥男爵悲歌</h4>
                 <ul class="c-bullets">
                   <li>老巫会残害生灵以儿童为食，男爵夫人心智沦丧</li><li>杰洛特在道德两难的泥潭中挣扎，艰难拼凑希里行踪</li>
@@ -592,7 +635,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【自由之城】</span>
+                <span class="c-pill">【自由之城】</span>
                 <h4 class="c-title">诺维格瑞暗流与女巫猎杀</h4>
                 <ul class="c-bullets">
                   <li>狂热宗教裁判所大肆屠杀非人种族与法师术士</li><li>联手特莉丝与盗贼工会，终于查明希里前往迷雾之岛</li>
@@ -605,16 +648,17 @@
           <div class="causal-scene-card" id="scene-card-3">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 03</span>
+                <span class="csc-step">第三幕</span>
                 <span class="csc-time-tag">01:17</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(77.44, 3)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">迷雾重逢 · 父女相拥与警报拉响</h3>
+              <h3 class="csc-title">迷雾重逢——父女相拥与警报拉响</h3>
               <p class="csc-narration">"整个游戏最催人泪下的瞬间，在迷雾之岛轰然降临！杰洛特历经千辛万苦乘船穿越迷雾，推开木屋大门，却看到希里早已冰冷地躺在床上，毫无生机！那一刻，斩杀过无数怪物的冷血白狼心碎跪地，紧紧将女儿抱在怀里，悲痛欲绝！然而奇迹发生了——魔法萤火虫唤醒了希里，女孩缓缓睁开双眼，父女紧紧相拥！但片刻温存后警报骤响：狂猎大军已追踪魔力气息降临，唯有猎魔人的老巢凯尔莫罕才能作为决战要塞！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【穿越迷雾】</span>
+                <span class="c-pill">【穿越迷雾】</span>
                 <h4 class="c-title">寻获被魔法隐匿的孤岛木屋</h4>
                 <ul class="c-bullets">
                   <li>在小矮人们的指引下，杰洛特推开冰冷沉重的木门</li><li>看到身体僵硬没有呼吸的希里，仿佛一切努力化为泡影</li>
@@ -622,7 +666,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【白狼落泪】</span>
+                <span class="c-pill">【白狼落泪】</span>
                 <h4 class="c-title">跨越生死的温情相拥</h4>
                 <ul class="c-bullets">
                   <li>魔法光芒重燃生机，希里睁眼看到日思夜想的养父</li><li>没有过多言语，一个胜过千言万语的深情拥抱洗净所有风尘</li>
@@ -630,7 +674,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【警报骤响】</span>
+                <span class="c-pill">【警报骤响】</span>
                 <h4 class="c-title">冰霜传送门撕裂天空</h4>
                 <ul class="c-bullets">
                   <li>狂猎大军的幽灵船已近在咫尺，再无藏身之地</li><li>向全世界所有挚友发出最高求援信，决战凯尔莫罕城堡！</li>
@@ -643,16 +687,17 @@
           <div class="causal-scene-card" id="scene-card-4">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 04</span>
+                <span class="csc-step">第四幕</span>
                 <span class="csc-time-tag">01:58</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(118.44, 4)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">古堡死战 · 维瑟米尔之死与血脉暴走</h3>
+              <h3 class="csc-title">古堡死战——维瑟米尔之死与血脉暴走</h3>
               <p class="csc-narration">"凯尔莫罕保卫战是一场惨烈至极的攻防绝战！叶奈法升起巨大的魔法穹顶，特莉丝降下漫天火雨，杰洛特、兰伯特、艾斯卡尔与各路好友在城墙下浴血奋战！然而狂猎的冰霜风暴瞬间冰封全场！狂猎将领伊勒瑞斯抓住了希里，德高望重的老猎魔人导师维瑟米尔为了保护希里，被伊勒瑞斯残忍折断了脖子！目睹如祖父般的长者牺牲，悲痛欲绝的希里长者之血彻底暴走，狂暴的毁灭尖叫几乎震碎了整座城堡，狂猎被迫狼狈撤退！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【血染古堡】</span>
+                <span class="c-pill">【血染古堡】</span>
                 <h4 class="c-title">猎魔人兄弟并肩血战寒冰恶魔</h4>
                 <ul class="c-bullets">
                   <li>魔法护盾、地雷与伊格尼火海交织，抵挡如潮狂猎大军</li><li>终究敌不过绝对严寒的冰冻封锁，防线步步失守</li>
@@ -660,7 +705,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【宗师陨落】</span>
+                <span class="c-pill">【宗师陨落】</span>
                 <h4 class="c-title">维瑟米尔壮烈牺牲护幼犊</h4>
                 <ul class="c-bullets">
                   <li>被伊勒瑞斯踩在脚下，至死不肯用希里交换生机</li><li>脖颈被折断的那一刻，整个猎魔人学派痛失慈父</li>
@@ -668,7 +713,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【血脉暴走】</span>
+                <span class="c-pill">【血脉暴走】</span>
                 <h4 class="c-title">撕裂时空的毁灭之声</h4>
                 <ul class="c-bullets">
                   <li>希里彻底崩溃狂暴尖叫，长者之血引发天崩地裂的神力风暴</li><li>狂猎之王艾瑞汀在空间撕裂前仓皇逃窜，凯尔莫罕保住了！</li>
@@ -681,16 +726,17 @@
           <div class="causal-scene-card" id="scene-card-5">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 05</span>
+                <span class="csc-step">第五幕</span>
                 <span class="csc-time-tag">02:39</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(159.42, 5)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">史凯利格 · 太阳石诱敌与怒斩狂猎王</h3>
+              <h3 class="csc-title">史凯利格——太阳石诱敌与怒斩狂猎王</h3>
               <p class="csc-narration">"防守永远赢不了战争，白狼展开了雷霆万钧的反击！在阿瓦拉克的指引下，杰洛特在史凯利格群岛找到了上古神器“太阳石”，召唤狂猎的幽灵舰队进入现实陷阱！女术士集结布下结界，彻底锁死了狂猎的时空退路！杰洛特手持抹满剑油的银剑，单枪匹马登上狂猎旗舰纳吉尔法号！在狂风呼啸的甲板上，杰洛特以神乎其神的猎魔人剑术，亲手斩杀狂猎之王艾瑞汀，彻底粉碎了狂猎军团的入侵神话！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【太阳石诱敌】</span>
+                <span class="c-pill">【太阳石诱敌】</span>
                 <h4 class="c-title">激活上古信标引君入瓮</h4>
                 <ul class="c-bullets">
                   <li>诱骗狂猎将领进入狭窄海湾，女术士集结封锁时空传送门</li><li>切断狂猎大军撤退退路，将神级对手拖入凡人肉搏战</li>
@@ -698,7 +744,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【怒斩伊勒瑞斯】</span>
+                <span class="c-pill">【怒斩伊勒瑞斯】</span>
                 <h4 class="c-title">火印烫穿仇敌头盔报血仇</h4>
                 <ul class="c-bullets">
                   <li>在鲍尔德山顶亲手将伊勒瑞斯击毙，祭奠维瑟米尔亡魂</li><li>折断狂猎右臂，扫平决战前一切强敌障碍</li>
@@ -706,7 +752,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【旗舰斩首】</span>
+                <span class="c-pill">【旗舰斩首】</span>
                 <h4 class="c-title">银剑终结狂猎之王艾瑞汀</h4>
                 <ul class="c-bullets">
                   <li>纳吉尔法号甲板上的巅峰剑术死斗，剑刃火星四溅</li><li>刺穿艾瑞汀心脏，横行无数时空的狂猎噩梦彻底宣告终结！</li>
@@ -719,16 +765,17 @@
           <div class="causal-scene-card" id="scene-card-6">
             <div class="csc-header">
               <div class="csc-meta">
-                <span class="csc-step">STAGE 06</span>
+                <span class="csc-step">第六幕</span>
                 <span class="csc-time-tag">03:17</span>
+                <button type="button" class="scene-jump" onclick="jumpToChapter(197.49, 6)">从这幕开始看</button>
               </div>
-              <h3 class="csc-title">终局抉择 · 击碎白霜与猎魔人女孩的新生</h3>
+              <h3 class="csc-title">终局抉择——击碎白霜与猎魔人女孩的新生</h3>
               <p class="csc-narration">"艾瑞汀临死前的遗言揭开了最后危机：白霜天灾正从精灵高塔疯狂倾泻，整个世界马上就要被彻底冻死！希里毫不犹豫走向通往极寒风暴的时空核心！杰洛特拼死阻拦，但希里坚定地说：“这是我的宿命，但我会回来的！”在白霜的风暴中心，正是杰洛特在旅途中每一次对她的尊重、打雪仗的欢笑与无私的父爱，化成了她击碎白霜的无尽勇气！数月后，杰洛特在白果园将一把崭新的银剑交到希里手中，她终于成为了自由自在的猎魔人！"</p>
             </div>
             <div class="csc-grid">
               
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(249, 115, 22, 0.16); color: #f97316;">【舍身救世】</span>
+                <span class="c-pill">【舍身救世】</span>
                 <h4 class="c-title">毅然迈向白霜永冻核心</h4>
                 <ul class="c-bullets">
                   <li>唯有长者之血才能彻底平息肆虐多元宇宙的灭世天灾</li><li>希里选择担当救世责任，独自走入毁灭风暴之中</li>
@@ -736,7 +783,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(226, 232, 240, 0.16); color: #e2e8f0;">【父爱支撑】</span>
+                <span class="c-pill">【父爱支撑】</span>
                 <h4 class="c-title">记忆中的温暖点亮生命奇迹</h4>
                 <ul class="c-bullets">
                   <li>打雪仗的欢笑、洗劫实验室的恶作剧、毫无保留的信任</li><li>正是杰洛特真挚的父爱，给予希里从绝境中生还的强大意志</li>
@@ -744,7 +791,7 @@
               </div>
             
               <div class="causal-box">
-                <span class="c-pill" style="background: rgba(21, 128, 61, 0.16); color: #15803d;">【银剑新生】</span>
+                <span class="c-pill">【银剑新生】</span>
                 <h4 class="c-title">自由翱翔的燕子</h4>
                 <ul class="c-bullets">
                   <li>拒绝帝国皇位囚笼，选择当一名风餐露宿的猎魔人</li><li>父女策马奔向广袤无垠的天下，书写属于他们自己的自由传奇！</li>
@@ -763,7 +810,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene01_geralt.jpg" alt="利维亚的杰洛特" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">白狼猎魔人</div>
+              <div class="char-badge">白狼猎魔人</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">利维亚的杰洛特</h4>
@@ -774,7 +821,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene02_yennefer.jpg" alt="温格堡的叶奈法" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">黑白女术士</div>
+              <div class="char-badge">黑白女术士</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">温格堡的叶奈法</h4>
@@ -785,7 +832,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene03_ciri.jpg" alt="希里雅 (希里)" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">辛特拉幼狮</div>
+              <div class="char-badge">辛特拉幼狮</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">希里雅 (希里)</h4>
@@ -796,7 +843,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene04_wildhunt.jpg" alt="维瑟米尔老爷子" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">老猎魔人宗师</div>
+              <div class="char-badge">老猎魔人宗师</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">维瑟米尔老爷子</h4>
@@ -807,7 +854,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene05_battle.jpg" alt="狂猎之王 艾瑞汀" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">精灵暴君</div>
+              <div class="char-badge">精灵暴君</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">狂猎之王 艾瑞汀</h4>
@@ -818,7 +865,7 @@
           <div class="char-card">
             <div class="char-img-wrap">
               <img src="assets/images/scene06_ending.jpg" alt="猎魔人 希里" class="char-img" />
-              <div class="char-badge" style="border-color: #e2e8f0; color: #e2e8f0;">自由新生</div>
+              <div class="char-badge">自由新生</div>
             </div>
             <div class="char-body">
               <h4 class="char-name">猎魔人 希里</h4>
@@ -830,7 +877,7 @@
   </main>
 
   <footer class="footer">
-    <p>Hyperframe Video & Visual Knowledge Lab · 基于因果逻辑与高阶视觉合成构建</p>
+    <p>Hyperframe 视频工作室 — 用因果逻辑讲清剧情</p>
   </footer>
 
   <script>
@@ -839,17 +886,17 @@
     const loadingText = document.getElementById('loadingHintText');
     const timestamps = [0.0, 37.64, 77.44, 118.44, 159.42, 197.49];
     const sceneTitles = [
-      "天灾前因 · 狂猎阴影与长者之血",
-      "千里寻女 · 战火大陆与旧爱重聚",
-      "迷雾重逢 · 父女相拥与警报拉响",
-      "古堡死战 · 维瑟米尔之死与血脉暴走",
-      "史凯利格 · 太阳石诱敌与怒斩狂猎王",
-      "终局抉择 · 击碎白霜与猎魔人女孩的新生"
+      "天灾前因——狂猎阴影与长者之血",
+      "千里寻女——战火大陆与旧爱重聚",
+      "迷雾重逢——父女相拥与警报拉响",
+      "古堡死战——维瑟米尔之死与血脉暴走",
+      "史凯利格——太阳石诱敌与怒斩狂猎王",
+      "终局抉择——击碎白霜与猎魔人女孩的新生"
     ];
 
     if (loadingHint) {
       video.addEventListener('waiting', () => {
-        if (loadingText) loadingText.innerText = '视频缓冲中，请稍候...';
+        if (loadingText) loadingText.innerText = '视频加载中…';
         loadingHint.style.display = 'flex';
       });
       video.addEventListener('canplay', () => {
@@ -861,7 +908,7 @@
       video.addEventListener('error', () => {
         loadingHint.style.display = 'flex';
         if (loadingText) {
-          loadingText.innerHTML = '<span style="color:#f87171;">⚠️ 视频加载较慢，建议点击下方【在新窗口打开视频】或【下载原片】直接观看</span>';
+          loadingText.innerHTML = '<span style="color:#f87171;">⚠️ 视频加载较慢，可以点「在新窗口打开视频」或「下载原片」观看</span>';
         }
       });
     }
@@ -870,6 +917,8 @@
       video.currentTime = seconds;
       video.play().catch(e => console.warn('Autoplay restricted or loading:', e));
       updateChapterUI(idx - 1);
+      var box = document.querySelector('.video-box');
+      if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function setSpeed(speed, btn) {
@@ -895,7 +944,7 @@
       updateChapterUI(activeIdx);
     });
   </script>
-<a href="https://github.com/holynova/witcher-3-lore" target="_blank" rel="noopener" style="position:fixed;bottom:8px;right:12px;z-index:10000;font:12px system-ui;color:#cbd5e1;background:#111827;padding:6px 10px;border-radius:6px">GitHub</a>
+<a href="https://github.com/holynova/witcher-3-lore" target="_blank" rel="noopener" style="position:fixed;bottom:8px;right:12px;z-index:10000;font:13px system-ui;color:#d6d0c4;background:#1c1917;padding:6px 10px;border-radius:6px">GitHub</a>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"></script>
 </body>
 </html>
