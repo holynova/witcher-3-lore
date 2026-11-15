@@ -4,7 +4,7 @@
   "scenes": [
     {
       "id": "scene-01",
-      "title": "天灾前因 · 狂猎阴影与长者之血",
+      "title": "天灾前因——狂猎阴影与长者之血",
       "eyebrow": "TIMELINE 01 / THE FROST & ELDER BLOOD",
       "image": "assets/images/scene01_geralt.jpg",
       "char_name": "利维亚的杰洛特",
@@ -43,7 +43,7 @@
     },
     {
       "id": "scene-02",
-      "title": "千里寻女 · 战火大陆与旧爱重聚",
+      "title": "千里寻女——战火大陆与旧爱重聚",
       "eyebrow": "TIMELINE 02 / TRAIL OF CIRI & YENNEFER",
       "image": "assets/images/scene02_yennefer.jpg",
       "char_name": "温格堡的叶奈法",
@@ -82,7 +82,7 @@
     },
     {
       "id": "scene-03",
-      "title": "迷雾重逢 · 父女相拥与警报拉响",
+      "title": "迷雾重逢——父女相拥与警报拉响",
       "eyebrow": "TIMELINE 03 / THE ISLE OF MISTS",
       "image": "assets/images/scene03_ciri.jpg",
       "char_name": "希里雅 (希里)",
@@ -121,7 +121,7 @@
     },
     {
       "id": "scene-04",
-      "title": "古堡死战 · 维瑟米尔之死与血脉暴走",
+      "title": "古堡死战——维瑟米尔之死与血脉暴走",
       "eyebrow": "TIMELINE 04 / BATTLE OF KAER MORHEN",
       "image": "assets/images/scene04_wildhunt.jpg",
       "char_name": "维瑟米尔老爷子",
@@ -160,7 +160,7 @@
     },
     {
       "id": "scene-05",
-      "title": "史凯利格 · 太阳石诱敌与怒斩狂猎王",
+      "title": "史凯利格——太阳石诱敌与怒斩狂猎王",
       "eyebrow": "TIMELINE 05 / FINAL BATTLE IN SKELLIGE",
       "image": "assets/images/scene05_battle.jpg",
       "char_name": "狂猎之王 艾瑞汀",
@@ -199,7 +199,7 @@
     },
     {
       "id": "scene-06",
-      "title": "终局抉择 · 击碎白霜与猎魔人女孩的新生",
+      "title": "终局抉择——击碎白霜与猎魔人女孩的新生",
       "eyebrow": "TIMELINE 06 / CIRI'S WITCHER DESTINY",
       "image": "assets/images/scene06_ending.jpg",
       "char_name": "猎魔人 希里",
